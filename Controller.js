@@ -7,7 +7,7 @@ const controlDatePast = (req, res) => {
     date == "Invalid Date" ? 
     (res.json({ error : "Invalid Date" })) 
     : 
-    (res.json({unix: date.getTime(), utc: date.toUTCString()}))
+    (res.json({unix: Number(date.getTime()), utc: date.toUTCString()}))
 
   } else{
     // Convert array items to Number
@@ -19,7 +19,7 @@ const controlDatePast = (req, res) => {
 
     const timeUTC = new Date(milisecondDate).toUTCString()
 
-    timeUTC == "Invalid Date" ? (res.json({ error : "Invalid Date" })) : (res.json({unix: milisecondDate,utc: timeUTC}))
+    timeUTC == "Invalid Date" ? (res.json({ error : "Invalid Date" })) : (res.json({unix: Number(milisecondDate),utc: timeUTC}))
     
   }
   
